@@ -1,0 +1,10 @@
+/* here you can put your own css to customize and override the theme */
+
+.post-date{
+	color: brown; 
+	font-size: 10pt;
+	background: #f4f4f4;
+	padding-bottom: 4px 2px;
+	margin: 3px 0;
+	display: block;
+}
