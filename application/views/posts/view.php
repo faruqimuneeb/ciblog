@@ -12,3 +12,16 @@
 	</ul>
 	<p> <?php echo $post['body']; ?></p>
 </div>
+
+<hr>
+<div class="row">
+	<div class="col-sm-1">
+		<a href="<?php echo base_url();?>posts/edit/<?php echo $post['slug'] ?>" class="btn form-control blue">Edit</a>
+	</div>
+	<div class="col-sm-1">
+		<?php echo form_open('posts/delete/'.$post['id']); ?>
+			<button type="submit" class="form-control btn red">Delete</button>
+		</form>		
+	</div>
+
+</div>

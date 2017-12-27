@@ -41,6 +41,8 @@ License: You must have a valid license purchased only from themeforest(the above
    <link href="<?php echo base_url(); ?>assets/css/themes/blue.css" rel="stylesheet" type="text/css"/>
    <!-- END THEME STYLES -->
    <link rel="shortcut icon" href="favicon.ico" />
+
+   <script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
 </head>
 <!-- END HEAD -->
 
@@ -68,6 +70,9 @@ License: You must have a valid license purchased only from themeforest(the above
 					<li><a href="<?php echo base_url(); ?>about">About</a></li>
           <li><a href="<?php echo base_url(); ?>contactus">Contact us</a></li>
           <li class=""><a href="<?php echo base_url(); ?>posts">Blog</a></li>                        
+          <li class="">
+              <a href="<?php echo base_url(); ?>posts/create" >Create Post</a>
+          </li>         
 				</ul>
 			</div>
 			<!-- BEGIN TOP NAVIGATION MENU -->
