@@ -31,19 +31,34 @@
             <textarea class="form-control" name="body" id="editor1" rows="10" cols="80">
                 <?php echo $post['body']; ?>
             </textarea>
-            <script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'editor1' );
-            </script>
 		    </div>
 		  </div>
+
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Category</label>
+		    <div class="col-sm-10">
+
+		      <select class="form-control" name="category_id">
+		      		<?php 
+		      		foreach ($categories as $category) {
+		      			if($category['id']==$post['category_id']){
+		      				$selected ='selected';
+		      			}else{
+		      				$selected='';
+		      			}
+		      			echo "<option value=\"".$category['id']."\"".$selected." >". $category['name'] ."</option>";
+		      		}
+		      		?>		      	
+		      </select>
+		    </div>
+		  </div>
+
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10 text-right">
 		      <button type="submit" name="save" class="btn blue">Save</button>
 		    </div>
 		  </div>
 		</div>
-		</form>
+		<?php echo form_close(); ?>
 	</div>
 </div>

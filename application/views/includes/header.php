@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!-- 
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.1.1
-Version: 2.0.2
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
@@ -20,8 +11,11 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta content="" name="description" />
     <meta content="" name="author" />
 
+
+
    <!-- BEGIN GLOBAL MANDATORY STYLES -->          
-   <link href="<?php echo base_url(); ?>assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+   <!--- <link href="<?php echo base_url(); ?>assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>-->
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
    <link href="<?php echo base_url(); ?>assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
    <!-- END GLOBAL MANDATORY STYLES -->
    
@@ -38,7 +32,7 @@ License: You must have a valid license purchased only from themeforest(the above
    <link href="<?php echo base_url(); ?>assets/css/themes/blue.css" rel="stylesheet" type="text/css" id="style_color"/>
    <link href="<?php echo base_url(); ?>assets/css/style-responsive.css" rel="stylesheet" type="text/css"/>
    <link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet" type="text/css"/>
-   <link href="<?php echo base_url(); ?>assets/css/themes/blue.css" rel="stylesheet" type="text/css"/>
+   <link href="<?php echo base_url(); ?>assets/css/themes/green.css" rel="stylesheet" type="text/css"/>
    <!-- END THEME STYLES -->
    <link rel="shortcut icon" href="favicon.ico" />
 
@@ -63,16 +57,29 @@ License: You must have a valid license purchased only from themeforest(the above
 		
 			<!-- BEGIN TOP NAVIGATION MENU -->
 			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav pull-left">
 					<li class="">
             <a href="<?php echo base_url(); ?>">Home</a>
 					</li>					
 					<li><a href="<?php echo base_url(); ?>about">About</a></li>
           <li><a href="<?php echo base_url(); ?>contactus">Contact us</a></li>
           <li class=""><a href="<?php echo base_url(); ?>posts">Blog</a></li>                        
+          <li class=""><a href="<?php echo base_url(); ?>categories">Categories</a></li>                        
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+
           <li class="">
-              <a href="<?php echo base_url(); ?>posts/create" >Create Post</a>
+              <a href="<?php echo base_url(); ?>posts/create" ><i class="fa fa-sticky-note" aria-hidden="true"></i>
+Create Post</a>
+          </li>
+          <li class="">
+              <a href="<?php echo base_url(); ?>categories/create" ><i class="fa fa-list" aria-hidden="true"></i>
+Create Category</a>
           </li>         
+          <li class="">
+              <a href="<?php echo base_url(); ?>users/register" ><i class="fa fa-user-plus" aria-hidden="true"></i>
+Register</a>
+          </li>
 				</ul>
 			</div>
 			<!-- BEGIN TOP NAVIGATION MENU -->
@@ -89,3 +96,23 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN PAGE CONTAINER -->  
     <div class="page-container">
       <div class="container">
+        <!-- displaying flash messages -->
+
+        <?php 
+            if($this->session->flashdata('user_registered')){
+              echo "<p class=\"alert alert-success\">".$this->session->flashdata('user_registered')."</p>";
+            }
+
+            if($this->session->flashdata('post_created')){
+              echo "<p class=\"alert alert-success\">".$this->session->flashdata('post_created')."</p>";
+            }
+            if($this->session->flashdata('post_updated')){
+              echo "<p class=\"alert alert-success\">".$this->session->flashdata('post_updated')."</p>";
+            }
+            if($this->session->flashdata('post_deleted')){
+              echo "<p class=\"alert alert-success\">".$this->session->flashdata('post_deleted')."</p>";
+            }
+            if($this->session->flashdata('category_created')){
+              echo "<p class=\"alert alert-success\">".$this->session->flashdata('category_created')."</p>";
+            }
+        ?>
